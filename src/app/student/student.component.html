@@ -1,6 +1,12 @@
 <div>
-  Student: {{ studant.name }}
-  <div [hidden]="!studant.isJedi">
-    Jedi Template: {{studant.temple}}
+  Student: <a href="#" (click)="clicked()">{{ studant?.name }}</a> 
+  <div [hidden]="!studant?.isJedi">
+    Jedi Template: {{studant?.temple}} 
+    <button (click)="description.focus()">Focus!</button> <br><br>
+    <textarea #description></textarea>
   </div>
 </div>
+
+<p *ngIf="!Student" >
+  Sem dados dos para exibir!
+</p>
